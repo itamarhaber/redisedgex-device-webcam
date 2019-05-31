@@ -2,27 +2,27 @@
 
 GO=CGO_ENABLED=0 GO111MODULE=on go
 
-MICROSERVICES=example/cmd/device-simple/device-simple
+MICROSERVICES=cmd/device-webcam/device-webcam
 .PHONY: $(MICROSERVICES)
 
 VERSION=$(shell cat ./VERSION)
 
-GOFLAGS=-ldflags "-X github.com/edgexfoundry/device-sdk-go.Version=$(VERSION)"
+GOFLAGS=-ldflags "-X github.com/redislabs/edgex-device-webcam.Version=$(VERSION)"
 
 GIT_SHA=$(shell git rev-parse HEAD)
 
 build: $(MICROSERVICES)
 	$(GO) install -tags=safe
 
-example/cmd/device-simple/device-simple:
-	$(GO) build $(GOFLAGS) -o $@ ./example/cmd/device-simple
+cmd/device-webcam/device-webcam:
+	$(GO) build $(GOFLAGS) -o $@ ./cmd/device-webcam
 
 docker:
 	docker build \
-		-f example/cmd/device-simple/Dockerfile \
+		-f cmd/device-webcam/Dockerfile \
 		--label "git_sha=$(GIT_SHA)" \
-		-t edgexfoundry/docker-device-sdk-simple:$(GIT_SHA) \
-		-t edgexfoundry/docker-device-sdk-simple:$(VERSION)-dev \
+		-t redislabs/edgex-device-webcam:$(GIT_SHA) \
+		-t redislabs/edgex-device-webcam:$(VERSION)-dev \
 		.
 
 test:

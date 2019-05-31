@@ -21,7 +21,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/edgexfoundry/device-sdk-go/internal/common"
+	"github.com/redislabs/edgex-device-webcam/internal/common"
 	"github.com/edgexfoundry/go-mod-registry/pkg/types"
 	"github.com/edgexfoundry/go-mod-registry/registry"
 	"github.com/pelletier/go-toml"

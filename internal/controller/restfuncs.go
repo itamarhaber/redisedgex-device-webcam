@@ -15,9 +15,9 @@ import (
 	"net/http"
 	"runtime"
 
-	"github.com/edgexfoundry/device-sdk-go/internal/common"
-	"github.com/edgexfoundry/device-sdk-go/internal/handler"
-	"github.com/edgexfoundry/device-sdk-go/internal/handler/callback"
+	"github.com/redislabs/edgex-device-webcam/internal/common"
+	"github.com/redislabs/edgex-device-webcam/internal/handler"
+	"github.com/redislabs/edgex-device-webcam/internal/handler/callback"
 	"github.com/edgexfoundry/go-mod-core-contracts/clients"
 	contract "github.com/edgexfoundry/go-mod-core-contracts/models"
 	"github.com/gorilla/mux"

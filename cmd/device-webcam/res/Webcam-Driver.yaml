@@ -1,0 +1,76 @@
+name: "Webcam-Device"
+manufacturer: "Redis Labs"
+model: "IH-03"
+labels: [ "webcam", "video", "yolo" ]
+
+description: "A webcam device"
+
+deviceResources:
+    -
+        name: "Frame"
+        description: "A captured frame."
+        properties:
+            value:
+                { type: "Binary", readWrite: "R" }
+            units:
+                { type: "Binary", readWrite: "R", defaultValue: "Frame" }
+
+    -
+        name: "Hoomans"
+        description: "Number of people."
+        properties:
+            value:
+                { type: "Integer", readWrite: "R" }
+            units:
+                { type: "String", readWrite: "R", defaultValue: "Hoomans detected" }
+
+    -
+        name: "Doggos"
+        description: "Number of doggos."
+        properties:
+            value:
+                { type: "Integer", readWrite: "R" }
+            units:
+                { type: "String", readWrite: "R", defaultValue: "Doggos detected" }
+
+deviceCommands:
+    -
+        name: "Capture"
+        get:
+            - { operation: "get", object: "Frame" }
+
+    -
+        name: "Detect"
+        get:
+            - { index: 1, operation: "get", object: "Frame" }
+            - { index: 2, operation: "get", object: "Hoomans" }
+            - { index: 3, operation: "get", object: "Doggos" }
+
+coreCommands:
+    -
+        name: "Capture"
+        get:
+            path: "/api/v1/device/{deviceId}/Capture"
+            responses:
+                -
+                    code: "200"
+                    description: "CBOR encoded image transmitted as event to Core-Data"
+                    expectedValues: ["Frame"]
+                -
+                    code: "500"
+                    description: "Internal Server Error"
+                    expectedValues: []
+
+    -
+        name: "Detect"
+        get:
+            path: "/api/v1/device/{deviceId}/Detect"
+            responses:
+                -
+                    code: "200"
+                    description: "CBOR encoded image and object detections transmitted as event to Core-Data"
+                    expectedValues: ["Frame", "Hoomans", "Doggos"]
+                -
+                    code: "500"
+                    description: "Internal Server Error"
+                    expectedValues: []

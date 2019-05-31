@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/edgexfoundry/device-sdk-go/internal/common"
+	"github.com/redislabs/edgex-device-webcam/internal/common"
 	contract "github.com/edgexfoundry/go-mod-core-contracts/models"
 )
 

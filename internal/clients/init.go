@@ -14,9 +14,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/edgexfoundry/device-sdk-go/internal/common"
-	"github.com/edgexfoundry/device-sdk-go/internal/config"
-	"github.com/edgexfoundry/device-sdk-go/internal/endpoint"
+	"github.com/redislabs/edgex-device-webcam/internal/common"
+	"github.com/redislabs/edgex-device-webcam/internal/config"
+	"github.com/redislabs/edgex-device-webcam/internal/endpoint"
 	"github.com/edgexfoundry/go-mod-core-contracts/clients"
 	"github.com/edgexfoundry/go-mod-core-contracts/clients/coredata"
 	"github.com/edgexfoundry/go-mod-core-contracts/clients/logger"

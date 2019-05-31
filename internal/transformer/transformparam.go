@@ -11,8 +11,8 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/edgexfoundry/device-sdk-go/internal/common"
-	dsModels "github.com/edgexfoundry/device-sdk-go/pkg/models"
+	"github.com/redislabs/edgex-device-webcam/internal/common"
+	dsModels "github.com/redislabs/edgex-device-webcam/pkg/models"
 	contract "github.com/edgexfoundry/go-mod-core-contracts/models"
 )
 

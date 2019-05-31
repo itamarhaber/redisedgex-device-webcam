@@ -19,14 +19,14 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/edgexfoundry/device-sdk-go/internal/autoevent"
-	"github.com/edgexfoundry/device-sdk-go/internal/cache"
-	"github.com/edgexfoundry/device-sdk-go/internal/clients"
-	"github.com/edgexfoundry/device-sdk-go/internal/common"
-	configLoader "github.com/edgexfoundry/device-sdk-go/internal/config"
-	"github.com/edgexfoundry/device-sdk-go/internal/controller"
-	"github.com/edgexfoundry/device-sdk-go/internal/provision"
-	dsModels "github.com/edgexfoundry/device-sdk-go/pkg/models"
+	"github.com/redislabs/edgex-device-webcam/internal/autoevent"
+	"github.com/redislabs/edgex-device-webcam/internal/cache"
+	"github.com/redislabs/edgex-device-webcam/internal/clients"
+	"github.com/redislabs/edgex-device-webcam/internal/common"
+	configLoader "github.com/redislabs/edgex-device-webcam/internal/config"
+	"github.com/redislabs/edgex-device-webcam/internal/controller"
+	"github.com/redislabs/edgex-device-webcam/internal/provision"
+	dsModels "github.com/redislabs/edgex-device-webcam/pkg/models"
 	"github.com/edgexfoundry/go-mod-core-contracts/clients/types"
 	contract "github.com/edgexfoundry/go-mod-core-contracts/models"
 	"github.com/google/uuid"
@@ -58,6 +58,7 @@ func (s *Service) Version() string {
 	return common.ServiceVersion
 }
 
+// Discovery returns the protocols discovered for this Device Service
 func (s *Service) Discovery() dsModels.ProtocolDiscovery {
 	return s.discovery
 }

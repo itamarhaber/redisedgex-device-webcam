@@ -10,8 +10,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/edgexfoundry/device-sdk-go/internal/common"
-	"github.com/edgexfoundry/device-sdk-go/internal/mock"
+	"github.com/redislabs/edgex-device-webcam/internal/common"
+	"github.com/redislabs/edgex-device-webcam/internal/mock"
 	contract "github.com/edgexfoundry/go-mod-core-contracts/models"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
